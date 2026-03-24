@@ -1,0 +1,92 @@
+.property-main-image{
+
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:8px;
+
+}
+
+.property-gallery{
+
+display:flex;
+gap:10px;
+margin-top:12px;
+flex-wrap:wrap;
+
+}
+
+.property-gallery img{
+
+width:110px;
+height:75px;
+object-fit:cover;
+border-radius:6px;
+cursor:pointer;
+transition:0.2s;
+border:2px solid transparent;
+
+}
+
+.property-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+.property-gallery img.active{
+
+border:2px solid #3273dc;
+
+}
+
+.property-card{
+
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+.property-price{
+
+font-size:2rem;
+font-weight:bold;
+color:#00a650;
+margin:15px 0;
+
+}
+
+.property-info{
+
+margin-top:10px;
+
+}
+
+.property-info p{
+
+margin-bottom:8px;
+
+}
+
+.property-actions{
+
+margin-top:25px;
+display:flex;
+gap:10px;
+
+}
+
+@media(max-width:768px){
+
+.property-main-image{
+height:260px;
+}
+
+.property-gallery img{
+width:80px;
+height:60px;
+}
+
+}

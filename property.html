@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Detalhes do imóvel</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<link rel="stylesheet"
+href="./css/property.css">
+
+</head>
+
+<body>
+
+<nav class="navbar is-dark">
+
+<div class="navbar-brand">
+<a class="navbar-item">
+Imobiliária CRM
+</a>
+</div>
+
+<div class="navbar-end">
+
+<div class="navbar-item">
+
+<button
+class="button"
+onclick="window.location.href='dashboard.html'">
+
+Voltar
+
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<section class="section">
+
+<div class="container">
+
+<h1 class="title">Detalhes do Imóvel</h1>
+
+<div class="columns">
+
+<div class="column is-7">
+
+<img
+id="mainImage"
+class="property-main-image"
+src="">
+
+<div
+id="gallery"
+class="property-gallery">
+
+</div>
+
+</div>
+
+
+<div class="column is-5">
+
+<div class="property-card">
+
+<div id="propertyDetails"></div>
+
+<div class="property-actions">
+
+<button
+class="button is-info"
+onclick="openEditPropertyModal()">
+
+Editar
+
+</button>
+
+<button
+class="button is-danger"
+onclick="deleteProperty()">
+
+Deletar
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MODAL EDITAR -->
+
+<div class="modal" id="editPropertyModal">
+
+<div
+class="modal-background"
+onclick="closeEditPropertyModal()">
+
+</div>
+
+<div class="modal-card">
+
+<header class="modal-card-head">
+
+<p class="modal-card-title">
+Editar imóvel
+</p>
+
+<button
+class="delete"
+onclick="closeEditPropertyModal()">
+</button>
+
+</header>
+
+<section class="modal-card-body">
+
+<div class="field">
+
+<label class="label">Preço</label>
+
+<input
+id="editPrice"
+class="input"
+type="number">
+
+</div>
+
+<div class="field">
+
+<label class="label">Quartos</label>
+
+<input
+id="editBedrooms"
+class="input"
+type="number">
+
+</div>
+
+<div class="field">
+
+<label class="label">
+
+Selecionar imagens
+
+</label>
+
+<input
+id="editImages"
+class="input"
+type="file"
+multiple
+accept="image/*">
+
+</div>
+
+<div
+id="imagePreview"
+class="property-gallery">
+
+</div>
+
+</section>
+
+<footer class="modal-card-foot">
+
+<button
+class="button is-success"
+onclick="updateProperty()">
+
+Salvar
+
+</button>
+
+<button
+class="button"
+onclick="closeEditPropertyModal()">
+
+Cancelar
+
+</button>
+
+</footer>
+
+</div>
+
+</div>
+
+
+<!-- MODAL DELETE -->
+
+<div class="modal" id="deleteModal">
+
+<div
+class="modal-background"
+onclick="closeDeleteModal()">
+</div>
+
+<div class="modal-card">
+
+<header class="modal-card-head">
+
+<p class="modal-card-title">
+Deletar imóvel
+</p>
+
+</header>
+
+<section class="modal-card-body">
+
+Deseja realmente deletar este imóvel?
+
+</section>
+
+<footer class="modal-card-foot">
+
+<button
+class="button"
+onclick="closeDeleteModal()">
+
+Cancelar
+
+</button>
+
+<button
+class="button is-danger"
+onclick="confirmDeleteProperty()">
+
+Deletar
+
+</button>
+
+</footer>
+
+</div> <!-- 🔥 FECHA modal-card -->
+</div> <!-- 🔥 FECHA deleteModal -->
+
+<!-- 🔥 VIEWER DE IMAGEM (AGORA FORA!) -->
+<div id="imageViewer" class="modal">
+  <div class="modal-background" onclick="closeViewer()"></div>
+
+  <div class="modal-content" style="text-align:center;">
+    <button onclick="prevImage()">⬅</button>
+    
+    <img id="viewerImage" style="max-width:80%; max-height:80vh;">
+    
+    <button onclick="nextImage()">➡</button>
+  </div>
+
+  <button class="modal-close is-large" onclick="closeViewer()"></button>
+</div>
+
+<script src="./js/property.js"></script>
+</body>
+</html>
