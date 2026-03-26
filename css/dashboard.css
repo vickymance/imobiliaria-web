@@ -6,7 +6,7 @@ overflow: hidden;
 
 transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-background: white;
+background: rgb(97, 99, 100);
 
 }
 
@@ -14,7 +14,7 @@ background: white;
 
 transform: translateY(-4px);
 
-box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+box-shadow: 0 10px 25px rgba(243, 167, 52, 0.15);
 
 }
 
@@ -76,4 +76,18 @@ justify-content: center;
 
 gap: 10px;
 
+}
+
+/* ========================= */
+/* HOVER NOS CARDS (UX) */
+/* ========================= */
+
+#propertiesList .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#propertiesList .card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }

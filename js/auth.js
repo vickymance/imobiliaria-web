@@ -25,10 +25,14 @@ localStorage.setItem("token", data.token);
 // 👇 AQUI (NOVO)
 localStorage.setItem("user", JSON.stringify(data.user));
 
-if (data.user.role === "broker") {
+const role = data?.user?.role;
+
+if (role === "broker") {
   window.location.href = "dashboard.broker.html";
+} else if (role === "client") {
+  window.location.href = "dashboard.clients.html";
 } else {
-  window.location.href = "dashboard.client.html";
+  console.error("Tipo de usuário inválido");
 }
 
     } catch (error) {

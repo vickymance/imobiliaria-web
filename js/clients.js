@@ -23,7 +23,6 @@ function formatDateWithStatus(date) {
 
 const modal = document.getElementById("client-modal");
 const form = document.getElementById("client-form");
-const tableBody = document.getElementById("clientsTableBody");
 
 // ===============================
 // MODAL
@@ -80,25 +79,29 @@ export async function createClient(event) {
 // LISTAR CLIENTES
 // ===============================
 export async function loadClients() {
+    const tableBody = document.getElementById("clientsTableBody");
+    if (!tableBody) return;
+
     try {
         const clients = await api.get("/clients");
+
         clients.sort((a, b) => {
-    const today = new Date();
-    today.setHours(0,0,0,0);
+            const today = new Date();
+            today.setHours(0,0,0,0);
 
-    const getPriority = (client) => {
-        if (!client.nextUpdate) return 4;
+            const getPriority = (client) => {
+                if (!client.nextUpdate) return 4;
 
-        const d = new Date(client.nextUpdate);
-        d.setHours(0,0,0,0);
+                const d = new Date(client.nextUpdate);
+                d.setHours(0,0,0,0);
 
-        if (d < today) return 1; // atrasado
-        if (d.getTime() === today.getTime()) return 2; // hoje
-        return 3; // futuro
-    };
+                if (d < today) return 1;
+                if (d.getTime() === today.getTime()) return 2;
+                return 3;
+            };
 
-    return getPriority(a) - getPriority(b);
-});
+            return getPriority(a) - getPriority(b);
+        });
 
         tableBody.innerHTML = "";
 
@@ -132,13 +135,11 @@ if (client.nextUpdate) {
     <td>${client.email}</td>
     <td>${client.regionInterest || "-"}</td>
 
-<td>
-  ${client.nextUpdate 
-    ? formatDateWithStatus(client.nextUpdate) 
-    : "-"}
-</td>
-
-<td>
+    <td>
+        ${client.nextUpdate 
+            ? formatDateWithStatus(client.nextUpdate) 
+            : "-"}
+    </td>
 
     <td>
         <div class="select is-small">
@@ -163,7 +164,6 @@ if (client.nextUpdate) {
             Excluir
         </button>
     </td>
-    <td>
 `;
 
 if (nextUpdateDate) {
@@ -179,15 +179,15 @@ if (nextUpdateDate) {
     }
 }
 if (client.pipeline === "quente") {
-    row.style.backgroundColor = "#ffe5b4"; // laranja claro
+    row.style.backgroundColor = "#fc8a48"; // laranja claro
 }
 
 if (client.pipeline === "morno") {
-    row.style.backgroundColor = "#fff9c4"; // amarelo claro
+    row.style.backgroundColor = "#ffd76a"; // amarelo claro
 }
 
 if (client.pipeline === "frio") {
-    row.style.backgroundColor = "#e3f2fd"; // azul claro
+    row.style.backgroundColor = "#5bbafd"; // azul claro
 }
 
             tableBody.appendChild(row);

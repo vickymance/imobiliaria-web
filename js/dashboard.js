@@ -22,6 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
       isClient ? "VMR Consultoria Imobiliária" : "Plataforma do Corretor";
   }
 
+  if (isClient) {
+  const propertiesSection = document.getElementById("propertiesSection");
+  const clientsSection = document.getElementById("clientsSection");
+
+  if (propertiesSection) propertiesSection.style.display = "block";
+  if (clientsSection) clientsSection.style.display = "none";
+}
+
   applyUserView();
   loadProperties();
 });
@@ -34,6 +42,9 @@ function applyUserView() {
   const subtitle = document.getElementById("dashboardSubtitle");
   const clientsTab = document.getElementById("clientsTab");
   const createBtn = document.getElementById("createPropertyBtn");
+  const tabProperties = document.getElementById("tabProperties");
+  const listBtn = document.querySelector(".button.is-primary");
+  const listPropertiesBtn = document.querySelector("button[onclick='loadProperties()']");
 
   // título
   if (title) {
@@ -45,7 +56,7 @@ function applyUserView() {
   // subtítulo
   if (subtitle) {
     subtitle.innerText = isClient
-      ? "Explore os imóveis disponíveis."
+      ? "Explore nossos imóveis"
       : "Gerencie os imóveis disponíveis no sistema.";
   }
 
@@ -58,6 +69,18 @@ function applyUserView() {
   if (isClient && createBtn) {
     createBtn.style.display = "none";
   }
+// esconder aba de imóveis
+  if (isClient && tabProperties) {
+  tabProperties.style.display = "none";
+}
+// esconde o botão de listar imóveis
+if (isClient && listBtn) {
+  listBtn.style.display = "none";
+}
+// mostra os cards de imóveis diretamente
+if (isClient && listPropertiesBtn) {
+  listPropertiesBtn.style.display = "none";
+}
 }
 
 // ===============================
@@ -77,7 +100,7 @@ async function loadProperties() {
 // RENDERIZAR LISTA
 // ===============================
 function renderProperties(properties) {
-  const container = document.getElementById("propertiesContainer");
+ const container = document.getElementById("propertiesList");
 
   if (!container) return;
 
@@ -249,6 +272,9 @@ window.showTab = function (tab) {
 
     if (tabClients) tabClients.classList.add("is-active");
     if (tabProperties) tabProperties.classList.remove("is-active");
+
+    loadClients();
   }
+  
 };
 

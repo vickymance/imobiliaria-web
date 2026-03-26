@@ -396,5 +396,21 @@ async function confirmDeleteProperty(){
     headers:{ Authorization:`Bearer ${token}` }
   });
 
-  window.location.href="dashboard.html";
+ if (user?.role === "broker") {
+  window.location.href = "dashboard.broker.html";
+} else {
+  window.location.href = "dashboard.clients.html";
 }
+}
+
+window.goBackToDashboard = function () {
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (user?.role === "broker") {
+    window.location.href = "dashboard.broker.html";
+  } else {
+    window.location.href = "dashboard.clients.html";
+  }
+
+};
