@@ -1,39 +1,87 @@
-# 🏠 CRM Imobiliário
+# 🌐 CRM Imobiliário - Frontend
 
-Sistema completo de CRM imobiliário com autenticação JWT, gestão de imóveis e clientes, e frontend integrado.
+## 📌 Visão Geral
+
+Interface web do CRM imobiliário integrada à API REST.
+
+### Funcionalidades:
+- Login e registro
+- Gestão de imóveis
+- Gestão de clientes
+- Follow-up e pipeline
 
 ---
 
 ## 🚀 Tecnologias
 
-### Backend (`imobiliaria-api`)
-- Node.js
-- Express
-- JWT
-- Swagger (OpenAPI)
-
-### Frontend (`imobiliaria-web`)
-- HTML, CSS (Bulma)
-- JavaScript (Vanilla)
+- HTML
+- CSS (Bulma)
+- JavaScript
 - Fetch API
 
 ---
 
-## 📁 Estrutura do Projeto
+## ⚙️ Pré-requisitos
 
-### Backend
-```
-src/
-├── controllers/
-├── routes/
-├── services/
-├── middleware/
-├── database/
-├── resources/
-└── server.js
+- Navegador
+- Backend rodando
+
+---
+
+## 🔧 Setup
+
+```bash
+git clone <repo-frontend>
 ```
 
-### Frontend
+Abrir:
+```
+index.html
+```
+
+---
+
+## 🔐 Autenticação
+
+- Token salvo em:
+```
+localStorage
+```
+
+- Header:
+```
+Authorization: Bearer TOKEN
+```
+
+---
+
+## 🧩 Funcionalidades
+
+### Dashboard
+- Listagem de imóveis
+- Navegação entre abas
+
+### Imóveis
+- CRUD completo
+- Visualização detalhada
+
+### Imagens
+- Upload (PNG/JPEG)
+- URL + base64
+- Galeria e viewer
+
+### Clientes
+- CRUD completo
+- Pipeline (Frio, Morno, Quente)
+
+### Follow-up
+- Histórico de notas
+- Próxima interação
+
+---
+
+## 📁 Estrutura
+
 ```
 imobiliaria-web/
 ├── index.html
@@ -46,89 +94,16 @@ imobiliaria-web/
 
 ---
 
-## ⚙️ Setup do Projeto
+## 📊 Status
 
-### 1. Clonar repositórios
-```bash
-git clone <repo-backend>
-git clone <repo-frontend>
-```
-
-### 2. Backend
-```bash
-cd imobiliaria-api
-npm install
-npm run dev
-```
-
-Servidor:
-```
-http://localhost:3000
-```
-
-Swagger:
-```
-http://localhost:3000/api-docs
-```
+- ✔ Funcional
+- ✔ Integrado com API
+- ✔ UX padronizada
 
 ---
 
-### 3. Frontend
-Abrir diretamente:
-```
-index.html
-```
+## 🚀 Próximos Passos
 
-Ou usar Live Server (VSCode)
-
----
-
-## 🔐 Autenticação
-
-- Login: `POST /auth/login`
-- Token salvo em `localStorage`
-- Header:
-```
-Authorization: Bearer TOKEN
-```
-
----
-
-## 📡 Principais Endpoints
-
-### Auth
-- `POST /auth/register-broker`
-- `POST /auth/register-client`
-- `POST /auth/login`
-
-### Properties
-- `GET /properties`
-- `POST /properties`
-- `PUT /properties/:id`
-- `DELETE /properties/:id`
-
-### Clients
-- `GET /clients`
-- `POST /clients`
-- `PUT /clients/:id`
-- `DELETE /clients/:id`
-
-### Follow-up
-- `POST /clients/:id/notes`
-- `POST /clients/:id/next-update`
-
----
-
-## 🧠 Funcionalidades
-
-- CRUD de imóveis
-- CRUD de clientes
-- Follow-up com histórico
-- Pipeline (Frio, Morno, Quente)
-- Controle de prioridade
-- Upload e galeria de imagens
-- Dashboards por perfil (Cliente / Corretor)
-
-## 👨‍💻 Autor
-
-Projeto desenvolvido como portfólio.
+- Upload cloud
+- Dashboard analítico
+- Melhorias UX
