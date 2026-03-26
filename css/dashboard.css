@@ -1,13 +1,12 @@
 .property-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-border-radius: 10px;
-
-overflow: hidden;
-
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-background: rgb(97, 99, 100);
-
+#propertiesList .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .property-card:hover {
@@ -90,4 +89,143 @@ gap: 10px;
 #propertiesList .card:hover {
   transform: translateY(-8px) scale(1.01);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.custom-navbar {
+  background: linear-gradient(90deg, #ff6b35, #ff8c42);
+  color: white;
+}
+
+.custom-navbar .navbar-item {
+  color: white;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* TÍTULO PLATAFORMA */
+/* ========================= */
+#dashboardTitle {
+  color: #ff6b35;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* ========================= */
+/* TABS IMÓVEIS / CLIENTES */
+/* ========================= */
+
+.tabs ul li a {
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #555;
+  transition: all 0.25s ease;
+}
+
+/* hover */
+.tabs ul li a:hover {
+  background-color: rgba(255, 107, 53, 0.1) !important;
+  color: #ff6b35 !important;
+  border-color: #ff6b35 !important;
+}
+
+/* ATIVA (CORRIGIDA) */
+.tabs ul li.is-active a {
+  background-color: #ff6b35 !important;
+  color: white !important;
+  border-color: #ff6b35 !important;
+}
+
+/* ========================= */
+/* BOTÕES LISTAR/CADASTRAR */
+/* ========================= */
+.button.is-primary {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+  color: white;
+  transition: all 0.25s ease;
+}
+
+.button.is-primary:hover {
+  background-color: #e55a2b;
+}
+
+/* botão secundário */
+.button.is-success {
+  background-color: white;
+  color: #555;
+  border: 1px solid #ddd;
+  transition: all 0.25s ease;
+}
+
+.button.is-success:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  border-color: #ff6b35;
+}
+
+.buttons {
+  gap: 12px;
+}
+
+/* ========================= */
+/* BACKGROUND DASHBOARD */
+/* ========================= */
+body {
+  background: linear-gradient(
+    180deg,
+    #fff6f2 0%,
+    #fdf7f2 100%
+  );
+}
+
+/* ========================= */
+/* HEADER NAVBAR BRAND */
+/* ========================= */
+
+.brand-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.brand-name-navbar {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+  text-align: center;
+}
+
+.brand-subtitle-navbar {
+  font-size: 1rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+/* ========================= */
+/* FOLLOW-UP MODAL HEADER FIX */
+/* ========================= */
+
+.followup-modal .modal-card-head {
+  background: linear-gradient(90deg, #ff6b35, #ff8c42) !important;
+  color: white !important;
+  border-bottom: none;
+}
+
+.followup-modal .modal-card-title {
+  color: white !important;
+  font-weight: 600;
+}
+
+/* botão fechar (X) */
+.followup-modal .delete {
+  filter: brightness(0) invert(1);
+}
+
+.followup-modal .modal-card {
+  border-radius: 16px;
+  overflow: hidden;
 }

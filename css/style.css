@@ -15,8 +15,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
 }
+
 
 /* container acima do overlay */
 .login-container {
@@ -43,3 +43,52 @@
 .button.is-light {
   border: 1px solid #ddd;
 }
+
+/* ========================= */
+/* TITULO LOGIN */
+/* ========================= */
+
+.login-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.brand-name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff6b35;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+}
+
+.brand-subtitle {
+  font-size: 1rem;
+  color: #555;
+  transform: scale(1.05);
+}
+
+/* ========================= */
+/* HOVER BOTÕES REGISTRO */
+/* ========================= */
+
+.button.is-light {
+  transition: all 0.25s ease;
+}
+
+.button.is-light:hover {
+   background-color: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  border-color: #ff6b35;
+}
+
+.register-btn {
+  transition: all 0.25s ease;
+}
+
+.register-btn:hover {
+  background-color: #ff6b35;
+  color: white;
+  border-color: #ff6b35;
+}
+
+

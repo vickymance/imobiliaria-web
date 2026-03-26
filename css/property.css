@@ -90,3 +90,33 @@ height:60px;
 }
 
 }
+
+body {
+  background: linear-gradient(
+    180deg,
+    #fff6f2 0%,
+    #fdf7f2 100%
+  );
+}
+
+.property-card {
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+.property-main-image {
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.property-gallery img {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.property-gallery img:hover {
+  transform: scale(1.05);
+}
